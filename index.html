@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VIP Booking Portal</title> <!-- CHANGE WEBSITE NAME HERE -->
+  <meta name="description" content="An exclusive, invitation-only booking portal." />
+
+  <!-- Google Fonts: Playfair Display (headings) + Inter (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Ambient background gradient layer -->
+  <div class="bg-glow" aria-hidden="true"></div>
+
+  <main class="stage">
+
+    <!-- ======================= LANDING SCREEN ======================= -->
+    <section id="screen-landing" class="screen screen--active" aria-labelledby="landing-heading">
+      <div class="card card--floating">
+        <span class="badge">
+          <span class="badge-dot" aria-hidden="true"></span>
+          Invitation Only
+        </span>
+
+        <h1 id="landing-heading" class="heading-xl">VIP Booking Portal</h1> <!-- CHANGE WEBSITE NAME HERE -->
+
+        <p class="subtitle">Welcome!</p>
+        <p class="body-text">
+          One exclusive booking slot is currently available.<br />
+          Would you like to reserve it?
+        </p>
+
+        <button type="button" id="btn-begin" class="btn btn-primary btn-large">
+          Begin Booking
+          <span class="btn-arrow" aria-hidden="true">→</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ======================= BOOKING FORM ======================= -->
+    <section id="screen-form" class="screen" aria-labelledby="form-heading" hidden>
+      <div class="card card--form">
+
+        <!-- Progress indicator -->
+        <div class="progress-wrap">
+          <div class="progress-label">
+            <span id="progress-step-label">Step 1 of 6</span>
+          </div>
+          <div class="progress-track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="16" id="progress-bar-track">
+            <div class="progress-fill" id="progress-bar-fill"></div>
+          </div>
+        </div>
+
+        <form id="booking-form" novalidate>
+
+          <!-- STEP 1: Date -->
+          <div class="form-step form-step--active" data-step="1">
+            <h2 class="heading-lg">Choose Your Date</h2>
+            <p class="field-help">Pick a day worth dressing up for.</p>
+            <div class="field-group">
+              <label for="input-date" class="sr-only">Date</label>
+              <input type="date" id="input-date" name="date" class="field-input" required />
+            </div>
+            <div class="step-actions">
+              <button type="button" class="btn btn-primary btn-continue" data-next="2">Continue</button>
+            </div>
+          </div>
+
+          <!-- STEP 2: Time -->
+          <div class="form-step" data-step="2">
+            <h2 class="heading-lg">Pick-up Time</h2>
+            <p class="field-help">Punctuality is very attractive.</p>
+            <div class="field-group">
+              <label for="input-time" class="sr-only">Time</label>
+              <input type="time" id="input-time" name="time" class="field-input" required />
+            </div>
+            <div class="step-actions">
+              <button type="button" class="btn btn-ghost btn-back" data-prev="1">Back</button>
+              <button type="button" class="btn btn-primary btn-continue" data-next="3">Continue</button>
+            </div>
+          </div>
+
+          <!-- STEP 3: Location -->
+          <div class="form-step" data-step="3">
+            <h2 class="heading-lg">Pick-up Location</h2>
+            <p class="field-help">I promise to be ready on time. Mostly.</p>
+            <div class="field-group">
+              <label for="input-location" class="sr-only">Pick-up Location</label>
+              <input type="text" id="input-location" name="location" class="field-input" placeholder="Where will you pick me up?" required />
+            </div>
+            <div class="step-actions">
+              <button type="button" class="btn btn-ghost btn-back" data-prev="2">Back</button>
+              <button type="button" class="btn btn-primary btn-continue" data-next="4">Continue</button>
+            </div>
+          </div>
+
+          <!-- STEP 4: Spoil Me -->
+          <div class="form-step" data-step="4">
+            <h2 class="heading-lg">How would you like to spoil me today?</h2>
+            <p class="field-help">Purely optional. Purely delightful.</p>
+            <div class="field-group radio-group" role="radiogroup" aria-label="Spoil me budget">
+              <label class="radio-card">
+                <input type="radio" name="spoil" value="KSh 10,000" required />
+                <span class="radio-custom" aria-hidden="true"></span>
+                <span class="radio-text">KSh 10,000</span>
+              </label>
+              <label class="radio-card radio-card--recommended">
+                <input type="radio" name="spoil" value="KSh 20,000" />
+                <span class="radio-custom" aria-hidden="true"></span>
+                <span class="radio-text">KSh 20,000</span>
+                <span class="mini-badge">⭐ Recommended</span>
+              </label>
+              <label class="radio-card">
+                <input type="radio" name="spoil" value="KSh 30,000" />
+                <span class="radio-custom" aria-hidden="true"></span>
+                <span class="radio-text">KSh 30,000</span>
+              </label>
+              <label class="radio-card">
+                <input type="radio" name="spoil" value="I'm feeling even more generous" />
+                <span class="radio-custom" aria-hidden="true"></span>
+                <span class="radio-text">I'm feeling even more generous 😍</span>
+              </label>
+            </div>
+            <div class="step-actions">
+              <button type="button" class="btn btn-ghost btn-back" data-prev="3">Back</button>
+              <button type="button" class="btn btn-primary btn-continue" data-next="5">Continue</button>
+            </div>
+          </div>
+
+          <!-- STEP 5: Dress Code -->
+          <div class="form-step" data-step="5">
+            <h2 class="heading-lg">Dress Code Preference</h2>
+            <p class="field-help">Set the mood for the evening.</p>
+            <div class="field-group radio-group" role="radiogroup" aria-label="Dress code">
+              <label class="radio-card">
+                <input type="radio" name="dresscode" value="Hot" required />
+                <span class="radio-custom" aria-hidden="true"></span>
+                <span class="radio-text">Hot</span>
+              </label>
+              <label class="radio-card">
+                <input type="radio" name="dresscode" value="Casual" />
+                <span class="radio-custom" aria-hidden="true"></span>
+                <span class="radio-text">Casual</span>
+              </label>
+            </div>
+            <div class="step-actions">
+              <button type="button" class="btn btn-ghost btn-back" data-prev="4">Back</button>
+              <button type="button" class="btn btn-primary btn-continue" data-next="6">Continue</button>
+            </div>
+          </div>
+
+          <!-- STEP 6: Special Request -->
+          <div class="form-step" data-step="6">
+            <h2 class="heading-lg">Special Request</h2>
+            <p class="field-help">Anything I should know before the big night?</p>
+            <div class="field-group">
+              <label for="input-request" class="sr-only">Special Request</label>
+              <textarea id="input-request" name="request" class="field-input field-textarea" rows="4" placeholder="Any special requests for the evening?"></textarea>
+            </div>
+            <div class="step-actions">
+              <button type="button" class="btn btn-ghost btn-back" data-prev="5">Back</button>
+              <button type="submit" id="btn-confirm" class="btn btn-primary btn-large btn-confirm">
+                <span class="btn-confirm-label">Confirm Booking</span>
+              </button>
+            </div>
+          </div>
+
+        </form>
+      </div>
+    </section>
+
+    <!-- ======================= LOADING / CONFIRMATION ANIMATION ======================= -->
+    <section id="screen-loading" class="screen" aria-labelledby="loading-heading" hidden>
+      <div class="card card--loading">
+        <div class="spinner" aria-hidden="true"></div>
+        <h2 id="loading-heading" class="heading-lg">Preparing your evening</h2>
+        <p id="loading-message" class="body-text loading-message">Checking availability...</p>
+        <div class="loading-bar-track">
+          <div class="loading-bar-fill" id="loading-bar-fill"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================= SUCCESS SCREEN ======================= -->
+    <section id="screen-success" class="screen" aria-labelledby="success-heading" hidden>
+      <div class="card card--floating">
+        <div class="success-check" aria-hidden="true">
+          <svg viewBox="0 0 52 52" class="success-check-svg">
+            <circle class="success-check-circle" cx="26" cy="26" r="24" fill="none" />
+            <path class="success-check-mark" fill="none" d="M14 27l7 7 16-16" />
+          </svg>
+        </div>
+        <h2 id="success-heading" class="heading-lg">Booking Confirmed</h2>
+        <p class="body-text">
+          Your reservation has been received successfully.<br />
+          A confirmation has been prepared.<br />
+          Looking forward to seeing you.
+        </p>
+        <button type="button" id="btn-done" class="btn btn-primary btn-large">Done</button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Confetti canvas overlay -->
+  <canvas id="confetti-canvas" aria-hidden="true"></canvas>
+
+  <footer class="site-footer">
+    <p>Crafted with curiosity.</p>
+  </footer>
+
+  <!-- EmailJS SDK (loaded from CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
