@@ -11,9 +11,9 @@ document.addEventListener('DOMContentLoaded', () => {
    *    Replace the three placeholder strings below with your own
    *    EmailJS credentials. Get these from https://www.emailjs.com
    * ------------------------------------------------------------------ */
-  const EMAILJS_PUBLIC_KEY = 'YOUR_PUBLIC_KEY_HERE';   // <-- INSERT EmailJS Public Key HERE
-  const EMAILJS_SERVICE_ID = 'YOUR_SERVICE_ID_HERE';   // <-- INSERT EmailJS Service ID HERE
-  const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID_HERE'; // <-- INSERT EmailJS Template ID HERE
+  const EMAILJS_PUBLIC_KEY = ' -7aI5T-loUs0oTXZB';   // <-- INSERT EmailJS Public Key HERE
+  const EMAILJS_SERVICE_ID = 'service_2nihu2r';   // <-- INSERT EmailJS Service ID HERE
+  const EMAILJS_TEMPLATE_ID = 'template_mvq61da'; // <-- INSERT EmailJS Template ID HERE
 
   // Initialize EmailJS with the public key (only works once key is filled in).
   if (window.emailjs && EMAILJS_PUBLIC_KEY !== 'YOUR_PUBLIC_KEY_HERE') {
