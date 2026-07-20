@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const EMAILJS_TEMPLATE_ID = 'template_mvq61da'; // <-- INSERT EmailJS Template ID HERE
 
   // Initialize EmailJS with the public key (only works once key is filled in).
-  if (window.emailjs && EMAILJS_PUBLIC_KEY !== 'YOUR_PUBLIC_KEY_HERE') {
+  if (window.emailjs && EMAILJS_PUBLIC_KEY !== '-7aI5T-loUs0oTXZB') {
     emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
   }
 
